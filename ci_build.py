@@ -57,7 +57,6 @@ def build_lambda(dir: str, use_docker: bool):
         run(f"DOCKER_BUILDKIT=1 docker build --file Dockerfile --output . .", cwd=dir)
     else:
         run(f"pip install -r {dir}/requirements.txt -t .", cwd=dir)
-        run(f"pip install -r {dir}/requirements-shared.txt -t .", cwd=dir)
     # To global to run tests
     run(f"pip install -r {dir}/requirements.txt", cwd=dir)
     to_remove = ["*.dist-info", "__pycache__", ".pytest_cache"]
@@ -65,7 +64,6 @@ def build_lambda(dir: str, use_docker: bool):
         run(f"rm -rf {i}", cwd=dir)
     run(f"rm -rf Dockerfile", cwd=dir)
     run(f"rm -rf requirements.txt", cwd=dir)
-    run(f"rm -rf requirements-shared.txt", cwd=dir)
 
 
 if __name__ == "__main__":

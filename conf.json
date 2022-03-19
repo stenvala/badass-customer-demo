@@ -1,0 +1,22 @@
+{
+  "deployments": [
+    {
+      "name": "DEV",
+      "account": "1111111111",
+      "regions": ["eu-west-1"],
+      "env": {
+        "STAGE": "dev",
+        "STACK_SUFFIX": "antti"
+      }
+    },
+    {
+      "name": "QA",
+      "account": "222222222222",
+      "regions": ["eu-west-1", "us-west-1"],
+      "env": {
+        "STAGE": "qa",
+        "STACK_SUFFIX": "pekko"
+      }
+    }
+  ]
+}
