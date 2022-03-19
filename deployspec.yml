@@ -10,4 +10,3 @@ phases:
   build:
     commands:
       - python ci_deploy.py
-      - python ci_demodata.py
