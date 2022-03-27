@@ -22,11 +22,11 @@
     },
     {
       "name": "PROD",
-      "account": "222222222222",
+      "account": "333333333333",
       "regions": ["eu-west-1", "us-west-1"],
       "prod": true,
       "env": {
-        "STAGE": "qa",
+        "STAGE": "prod",
         "STACK_SUFFIX": "pekko"
       }
     }
