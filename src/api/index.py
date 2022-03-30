@@ -14,4 +14,4 @@ app.add_middleware(
 
 @app.get("/")
 async def rest_get(request: Request):
-    return "HELLO WORLD#"
+    return "!HELLO WORLD!"
