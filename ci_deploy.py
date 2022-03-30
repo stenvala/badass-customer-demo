@@ -14,8 +14,8 @@ def create_env():
     print_lines("Create deployment context", True)
     env = json.dumps(
         {
-            "stage": os.environ["STAGE"].lower(),
-            "stackSuffix": os.environ["STACK_SUFFIX"].lower(),
+            "stage": os.environ.get("STAGE", "dev").lower(),
+            "stackSuffix": os.environ.get("STACK_SUFFIX", "none").lower(),
         },
         indent=2,
     )
@@ -35,7 +35,7 @@ def synth():
 
 def deploy():
     print_lines("Deploy", True)
-    hotswap = "--hotswap" if os.environ["STAGE"].lower() == "dev" else ""
+    hotswap = "--hotswap" if os.environ.get("STAGE", "dev").lower() == "dev" else ""
     run(f"npx cdk deploy {hotswap} --outputs-file ../stack-data.json", cwd=CDK)
 
 
