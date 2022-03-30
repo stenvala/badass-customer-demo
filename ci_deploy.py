@@ -31,7 +31,7 @@ def install_cdk_deps():
 
 def synth():
     print_lines("Deploy", True)
-    # run(f"npx cdk synth --json", cwd=CDK)
+    run(f"npx cdk synth --json", cwd=CDK)
 
 
 def deploy():
