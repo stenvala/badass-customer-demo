@@ -10,7 +10,3 @@ phases:
   build:
     commands:
       - python ci_deploy.py
-artifacts:
-  files:
-    - "**/*"
-  base-directory: "output"
