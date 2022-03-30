@@ -11,6 +11,7 @@ CDK = ROOT / "cdk"
 
 
 def create_env():
+    print("python --version")
     print_lines("Create deployment context", True)
     env = json.dumps(
         {
@@ -30,7 +31,7 @@ def install_cdk_deps():
 
 def synth():
     print_lines("Deploy", True)
-    run(f"npx cdk synth --json", cwd=CDK)
+    # run(f"npx cdk synth --json", cwd=CDK)
 
 
 def deploy():
