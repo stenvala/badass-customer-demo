@@ -2,13 +2,13 @@
   "deployments": [
     {
       "name": "DEV",
-      "account": "1111111113",
+      "account": "1111111111",
       "regions": ["eu-west-1"],
       "prod": false,
       "auto_deploy_branch_pattern": "^main$",
       "env": {
         "STAGE": "dev",
-        "STACK_SUFFIX": "dev"
+        "STACK_SUFFIX": "via-ci-cd"
       }
     },
     {
@@ -18,7 +18,7 @@
       "prod": false,
       "env": {
         "STAGE": "qa",
-        "STACK_SUFFIX": "qa"
+        "STACK_SUFFIX": ""
       }
     },
     {
@@ -28,7 +28,7 @@
       "prod": true,
       "env": {
         "STAGE": "prod",
-        "STACK_SUFFIX": "prod"
+        "STACK_SUFFIX": ""
       }
     }
   ]

@@ -16,6 +16,6 @@ new AppStack(app, {
     region: process.env.CDK_DEFAULT_REGION || "eu-west-1",
     stage,
   },
-  stackSuffix: `-${env.stackSuffix}`,
+  stackSuffix: env.stackSuffix.length > 0 ? `-${env.stackSuffix}` : "",
   constructs: {},
 });
