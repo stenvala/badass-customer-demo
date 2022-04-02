@@ -3,7 +3,7 @@
     {
       "name": "DEV",
       "account": "1111111111",
-      "regions": ["eu-west-1"],
+      "regions": ["eu-west-1", "us-west-1"],
       "prod": false,
       "auto_deploy_branch_pattern": "^main$",
       "env": {
@@ -14,7 +14,7 @@
     {
       "name": "QA",
       "account": "222222222222",
-      "regions": ["eu-west-1", "us-west-1"],
+      "regions": ["eu-west-1", "us-west-1", "ap-southeast-1"],
       "prod": false,
       "env": {
         "STAGE": "qa",
