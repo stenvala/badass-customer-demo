@@ -5,9 +5,10 @@
       "account": "1111111111",
       "regions": ["eu-west-1"],
       "prod": false,
+      "auto_deploy_branch_pattern": "main",
       "env": {
         "STAGE": "dev",
-        "STACK_SUFFIX": "antti"
+        "STACK_SUFFIX": "dev"
       }
     },
     {
@@ -17,7 +18,7 @@
       "prod": false,
       "env": {
         "STAGE": "qa",
-        "STACK_SUFFIX": "pekko"
+        "STACK_SUFFIX": "qa"
       }
     },
     {
@@ -27,7 +28,7 @@
       "prod": true,
       "env": {
         "STAGE": "prod",
-        "STACK_SUFFIX": "pekko"
+        "STACK_SUFFIX": "prod"
       }
     }
   ]
