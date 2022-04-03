@@ -10,6 +10,7 @@ START = time.time()
 ROOT = Path(__file__).parent.absolute()
 BUILD_TARGET = ROOT / "output"
 API = "api"
+TEST_RESULTS_DIR = ROOT / "test-results"
 
 
 def create_build_target():
@@ -66,10 +67,17 @@ def build_lambda(dir: str, use_docker: bool):
     run(f"rm -rf requirements.txt", cwd=dir)
 
 
+def run_unit_tests():
+    run(f"python -m pytest tests --capture tee-sys --junitxml={TEST_RESULTS_DIR / 'unit-tests.xml'}", cwd=ROOT / "src")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--docker", action="store_true")
     args = ap.parse_args()
+
+    #run_unit_tests()
+    #sys.exit(0)
 
     #sys.exit(1)
     create_build_target()
@@ -81,5 +89,8 @@ if __name__ == "__main__":
     run(f"du -sh {BUILD_TARGET}/*", cwd=ROOT)
 
     print_lines("Build ready", True)
+
+    run_unit_tests()    
+
     duration = time.time() - START
     print_lines(f"Total duration {duration}")
