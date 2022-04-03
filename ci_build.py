@@ -10,7 +10,7 @@ START = time.time()
 ROOT = Path(__file__).parent.absolute()
 BUILD_TARGET = ROOT / "output"
 API = "api"
-TEST_RESULTS_DIR = ROOT / "test-results"
+TEST_RESULTS_DIR = ROOT / "output-tests"
 
 
 def create_build_target():
@@ -68,7 +68,12 @@ def build_lambda(dir: str, use_docker: bool):
 
 
 def run_unit_tests():
+    run(f"pip install pytest")
     run(f"python -m pytest tests --capture tee-sys --junitxml={TEST_RESULTS_DIR / 'unit-tests.xml'}", cwd=ROOT / "src")
+    run("ls -la", CWD=ROOT)
+    run("ls -la", CWD=ROOT / "src")
+    run("ls -la", CWD=BUILD_TARGET)
+    run("ls -la", CWD=TEST_RESULTS_DIR)
 
 
 if __name__ == "__main__":

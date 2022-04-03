@@ -16,6 +16,6 @@ artifacts:
   base-directory: "output"
   secondary-artifacts:
     testresults:
-      base-directory: test-results
+      base-directory: output-tests
       files:
         - "*.xml"
