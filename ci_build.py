@@ -71,7 +71,7 @@ if __name__ == "__main__":
     ap.add_argument("--docker", action="store_true")
     args = ap.parse_args()
 
-    sys.exit(1)
+    #sys.exit(1)
     create_build_target()
     copy_common_files()
     copy_lambda_files(API)
