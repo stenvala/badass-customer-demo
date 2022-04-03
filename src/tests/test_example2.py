@@ -1,6 +1,6 @@
-def test_assert_fails():
+def test_assert_not_fails():
     print('In test1')
-    assert False
+    assert True
 
 def test_assert_true2():
     print('In test2')
