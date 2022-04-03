@@ -69,11 +69,7 @@ def build_lambda(dir: str, use_docker: bool):
 
 def run_unit_tests():
     run(f"pip install pytest")
-    run(f"python -m pytest tests --capture tee-sys --junitxml={TEST_RESULTS_DIR / 'unit-tests.xml'}", cwd=ROOT / "src")
-    run("ls -la", CWD=ROOT)
-    run("ls -la", CWD=ROOT / "src")
-    run("ls -la", CWD=BUILD_TARGET)
-    run("ls -la", CWD=TEST_RESULTS_DIR)
+    run(f"python -m pytest tests --capture tee-sys --junitxml={TEST_RESULTS_DIR / 'unit-tests.xml'}", cwd=ROOT / "src")    
 
 
 if __name__ == "__main__":
