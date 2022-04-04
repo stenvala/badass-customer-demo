@@ -1,5 +1,5 @@
 def test_assert_not_fails():
-    print('In test1')
+    print('In testa')
     assert True
 
 def test_assert_true2():
